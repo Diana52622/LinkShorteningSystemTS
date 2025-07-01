@@ -1,0 +1,72 @@
+.stats-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.stats-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.stats-table thead {
+  background-color: #f2f2f2;
+}
+
+.stats-table th,
+.stats-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.stats-table th {
+  font-weight: bold;
+}
+
+.stats-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.no-stats{
+  margin-top: 20px;
+  color: #666;
+}
+
+.loading-message {
+  margin: 20px;
+  color: #333;
+}
+
+.error-message {
+  margin: 20px;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+.back-button-container {
+  display: flex;
+}

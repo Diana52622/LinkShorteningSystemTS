@@ -1,13 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-export interface StatItem {
-  id: string;
-  created_at: string;
-  user_ip: string;
-  region: string;
-  browser: string;
-  os: string;
-}
+import type { StatItem } from '../types/types';
 
 export const fetchStats = createAsyncThunk(
   'url/fetchStats',

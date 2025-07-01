@@ -1,7 +1,8 @@
 import { createSlice} from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { fetchStats, type StatItem } from './api'
+import { fetchStats } from './api'
 import type { UrlState, UrlPayload } from '../types/types';
+import type {StatItem} from '../types/types'
 
 const loadState = (): Partial<UrlState> | undefined => {
   try {

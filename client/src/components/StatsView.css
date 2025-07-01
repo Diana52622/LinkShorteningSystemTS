@@ -1,58 +1,72 @@
-.stats-container {
+.stats {
   padding: 20px;
   font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.stats-title {
+.stats__header {
+  margin-bottom: 20px;
+}
+
+.stats__title {
   margin-bottom: 20px;
   color: #333;
 }
 
-.stats-table {
+.stats__controls {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.stats__table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-.stats-table thead {
+.stats__header {
   background-color: #f2f2f2;
 }
 
-.stats-table th,
-.stats-table td {
+.stats__cell {
   padding: 10px;
   border: 1px solid #ddd;
   text-align: left;
 }
 
-.stats-table th {
+.stats__cell--header {
   font-weight: bold;
 }
 
-.stats-table tbody tr:hover {
+.stats__row:hover {
   background-color: #f9f9f9;
 }
 
-.no-stats{
+.stats__empty-message {
   margin-top: 20px;
   color: #666;
+  text-align: center;
 }
 
-.loading-message {
+.stats__message {
   margin: 20px;
+  text-align: center;
   color: #333;
 }
 
-.error-message {
-  margin: 20px;
+.stats__message--error {
   color: #d32f2f;
   font-weight: bold;
 }
 
-.back-button {
+.stats__message--loading {
+  color: #333;
+}
+
+.button {
   display: inline-block;
   padding: 8px 16px;
-  margin-bottom: 10px;
   background-color: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -62,11 +76,7 @@
   transition: all 0.3s;
 }
 
-.back-button:hover {
+.button:hover {
   background-color: #e0e0e0;
   border-color: #ccc;
-}
-
-.back-button-container {
-  display: flex;
 }

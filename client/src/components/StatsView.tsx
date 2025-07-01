@@ -16,55 +16,55 @@ const StatsView: React.FC = () => {
   }, [dispatch, shortUrl]);
 
   if (statsLoading) return (
-    <div className="stats-container">
-      <div className="loading-message">Загрузка статистики...</div>
+    <div className="stats">
+      <div className="stats__message stats__message--loading">Загрузка статистики...</div>
     </div>
   );
 
   if (statsError) return (
-    <div className="stats-container">
-      <div className="error-message">Ошибка: {statsError}</div>
+    <div className="stats">
+      <div className="stats__message stats__message--error">Ошибка: {statsError}</div>
     </div>
   );
 
   return (
-    <div className="stats-container">
-      <div className="header-section">
-        <div className="back-button-container">
-          <Link to="/" state={{ preservedUrl: originalUrl }} className="back-button">
+    <div className="stats">
+      <div className="stats__header">
+        <div className="stats__controls">
+          <Link to="/" state={{ preservedUrl: originalUrl }} className="button">
             ← Вернуться назад
           </Link>
         </div>
-        <h2 className="stats-title">Статистика для ссылки: {shortUrl}</h2>
+        <h2 className="stats__title">Статистика для ссылки: {shortUrl}</h2>
       </div>
       
       {stats.length > 0 ? (
-        <div className="table-wrapper">
-          <table className="stats-table">
-            <thead>
-              <tr>
-                <th>Дата</th>
-                <th>IP-адрес</th>
-                <th>Регион</th>
-                <th>Браузер</th>
-                <th>ОС</th>
+        <div className="stats__content">
+          <table className="stats__table">
+            <thead className="stats__header">
+              <tr className="stats__row">
+                <th className="stats__cell stats__cell--header">Дата</th>
+                <th className="stats__cell stats__cell--header">IP-адрес</th>
+                <th className="stats__cell stats__cell--header">Регион</th>
+                <th className="stats__cell stats__cell--header">Браузер</th>
+                <th className="stats__cell stats__cell--header">ОС</th>
               </tr>
             </thead>
             <tbody>
               {stats.map((stat: StatItem) => (
-                <tr key={stat.id}>
-                  <td>{new Date(stat.created_at).toLocaleString()}</td>
-                  <td>{stat.user_ip}</td>
-                  <td>{stat.region}</td>
-                  <td>{stat.browser}</td>
-                  <td>{stat.os}</td>
+                <tr key={stat.id} className="stats__row">
+                  <td className="stats__cell">{new Date(stat.created_at).toLocaleString()}</td>
+                  <td className="stats__cell">{stat.user_ip}</td>
+                  <td className="stats__cell">{stat.region}</td>
+                  <td className="stats__cell">{stat.browser}</td>
+                  <td className="stats__cell">{stat.os}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       ) : (
-        <p className="no-stats-message">Нет данных о переходах</p>
+        <p className="stats__empty-message">Нет данных о переходах</p>
       )}
     </div>
   );
